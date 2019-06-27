@@ -1267,9 +1267,8 @@ With round pins</description>
 <pinref part="U1" gate="G$1" pin="5V"/>
 <wire x1="22.86" y1="88.9" x2="17.78" y2="88.9" width="0.1524" layer="91"/>
 <wire x1="17.78" y1="88.9" x2="17.78" y2="22.86" width="0.1524" layer="91"/>
-<wire x1="17.78" y1="22.86" x2="93.98" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="17.78" y1="22.86" x2="109.22" y2="22.86" width="0.1524" layer="91"/>
 <pinref part="U$1" gate="G$1" pin="9"/>
-<wire x1="93.98" y1="22.86" x2="109.22" y2="22.86" width="0.1524" layer="91"/>
 <wire x1="109.22" y1="22.86" x2="114.3" y2="22.86" width="0.1524" layer="91"/>
 <wire x1="114.3" y1="22.86" x2="114.3" y2="-7.62" width="0.1524" layer="91"/>
 <pinref part="X1" gate="G$1" pin="A"/>
@@ -1288,11 +1287,6 @@ With round pins</description>
 <pinref part="X1" gate="G$1" pin="VDD"/>
 <wire x1="129.54" y1="68.58" x2="109.22" y2="68.58" width="0.1524" layer="91"/>
 <junction x="109.22" y="68.58"/>
-<pinref part="U$1" gate="G$1" pin="1"/>
-<wire x1="93.98" y1="-7.62" x2="93.98" y2="22.86" width="0.1524" layer="91"/>
-<junction x="93.98" y="22.86"/>
-<pinref part="U$1" gate="G$1" pin="7"/>
-<wire x1="109.22" y1="-7.62" x2="109.22" y2="22.86" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="VSS" class="0">
@@ -1302,8 +1296,7 @@ With round pins</description>
 <wire x1="15.24" y1="86.36" x2="15.24" y2="20.32" width="0.1524" layer="91"/>
 <wire x1="167.64" y1="20.32" x2="121.92" y2="20.32" width="0.1524" layer="91"/>
 <pinref part="JP5" gate="G$1" pin="1"/>
-<wire x1="121.92" y1="20.32" x2="111.76" y2="20.32" width="0.1524" layer="91"/>
-<wire x1="111.76" y1="20.32" x2="83.82" y2="20.32" width="0.1524" layer="91"/>
+<wire x1="121.92" y1="20.32" x2="83.82" y2="20.32" width="0.1524" layer="91"/>
 <wire x1="83.82" y1="20.32" x2="58.42" y2="20.32" width="0.1524" layer="91"/>
 <wire x1="58.42" y1="20.32" x2="45.72" y2="20.32" width="0.1524" layer="91"/>
 <wire x1="45.72" y1="20.32" x2="15.24" y2="20.32" width="0.1524" layer="91"/>
@@ -1339,9 +1332,6 @@ With round pins</description>
 <pinref part="X1" gate="G$1" pin="VSS"/>
 <wire x1="129.54" y1="66.04" x2="121.92" y2="66.04" width="0.1524" layer="91"/>
 <junction x="121.92" y="66.04"/>
-<pinref part="U$1" gate="G$1" pin="8"/>
-<wire x1="111.76" y1="-7.62" x2="111.76" y2="20.32" width="0.1524" layer="91"/>
-<junction x="111.76" y="20.32"/>
 </segment>
 </net>
 </nets>
