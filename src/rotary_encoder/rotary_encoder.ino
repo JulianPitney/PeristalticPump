@@ -13,6 +13,7 @@
 AccelStepper myStepper(HALFSTEP, 4, 5, 6, 7);
 
 const int rs = 8, en = 9, d4 = 13, d5 = 12, d6 = 11, d7 = 10;
+const int encoder_button = 3;
 LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
 
 //#define LCD_CHARS   16
@@ -21,6 +22,11 @@ LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
 ClickEncoder *encoder;
 int last=0;
 int value=0;
+
+float steps=0;
+float Revs =0;
+unsigned long previousMillis=0;
+const long interval=3000;
 
 void timerIsr() {
   encoder->service();
@@ -34,29 +40,35 @@ void timerIsr() {
 //}
 //#endif
 
+void hardware_reset(){
+
+  lcd.clear();
+  lcd.setCursor(0,0);
+  steps = 0;
+  Revs = 0;
+  previousMillis = 0;
+  last = 0;
+  value = 0;
+  myStepper.setSpeed(0);
+}
+
+
 void setup() {
-  //Serial.begin(9600);
+
   lcd.begin(16,2);
   encoder = new ClickEncoder(A1, A0, A2);
   myStepper.setAcceleration(80000.0);
   myStepper.setMaxSpeed(850);
-
-//#ifdef WITH_LCD
-  //lcd.begin(LCD_CHARS, LCD_LINES);
-  //lcd.clear();
-  //displayAccelerationStatus();
-//#endif
-
+  pinMode(encoder_button, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(encoder_button), hardware_reset, HIGH);
   Timer1.initialize(1000);
   Timer1.attachInterrupt(timerIsr); 
   
 
 }
-float steps=0;
-float Revs =0;
 
-unsigned long previousMillis=0;
-const long interval=3000;
+
+
 
 void loop() {  
   value += encoder->getValue();
@@ -88,5 +100,3 @@ lcd.print(Revs);
 lcd.print("ml   ");
   }
 }
-
-
